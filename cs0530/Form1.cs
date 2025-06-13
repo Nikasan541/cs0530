@@ -10,12 +10,11 @@ namespace cs0530
         public Form1()
         {
             InitializeComponent();
-            vx[0] = random.Next(-10, 101);
-            vy[0] = random.Next(-10, 101);
-            vx[1] = random.Next(-10, 201);
-            vy[1] = random.Next(-10, 201);
-            vx[2] = random.Next(-10, 301);
-            vy[2] = random.Next(-10, 301);
+            for (int i = 0; i < 3; i++)
+            {
+                vx[i] = random.Next(-10, 11);
+                vy[i] = random.Next(-10, 11);
+            }
 
             label1.Top = random.Next(ClientSize.Height - label1.Top);
             label1.Left = random.Next(ClientSize.Width - label1.Width);
@@ -156,7 +155,7 @@ namespace cs0530
         {
             for(int i = 0; i < 10; i++)
             {
-                //MessageBox.Show($"{i}");
+                MessageBox.Show($"{i}");
                 button2.Text = $"{i}";
             }
         }
