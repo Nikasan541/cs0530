@@ -2,31 +2,25 @@ namespace cs0530
 {
     public partial class Form1 : Form
     {
-        int vx = -10;
-        int vy = -10;
-        int vx2 = -10;
-        int vy2 = -10;
-        int vx3 = -10;
-        int vy3 = -10;
-
-        int xx = -10;
-        int xy = -10;
+        int [] vx = new int[3];
+        int[] vy = new int[3];
         int counter = 0;
         static Random random = new Random();
 
         public Form1()
         {
             InitializeComponent();
-            vx = random.Next(-10, 11);
-            vy = random.Next(-10, 11);
+            vx[0] = random.Next(-10, 101);
+            vy[0] = random.Next(-10, 101);
+            vx[1] = random.Next(-10, 201);
+            vy[1] = random.Next(-10, 201);
+            vx[2] = random.Next(-10, 301);
+            vy[2] = random.Next(-10, 301);
+
             label1.Top = random.Next(ClientSize.Height-label1.Top);
             label1.Left = random.Next(ClientSize.Width-label1.Width);
-            vx2 = random.Next(-10, 11);
-            vy2 = random.Next(-10, 11);
             label5.Top = random.Next(ClientSize.Height - label5.Top);
             label5.Left = random.Next(ClientSize.Width - label5.Width);
-            vx3 = random.Next(-10, 11);
-            vy3 = random.Next(-10, 11);
             label6.Top = random.Next(ClientSize.Height - label6.Top);
             label6.Left = random.Next(ClientSize.Width - label6.Width);
 
@@ -42,17 +36,14 @@ namespace cs0530
             Text = $"{mpos.X},{mpos.Y} / {fpos.X},{fpos.Y}";
             textBox1.Text = $"{mpos.X},{mpos.Y} / {fpos.X},{fpos.Y}";
 
-            label1.Left += vx;
-            label1.Top += vy;
+            label1.Left += vx[0];
+            label1.Top += vy[0];
 
-            label2.Left += xx;
-            label2.Top += xy;
+            label5.Left += vx[1];
+            label5.Top += vy[1];
 
-            label5.Left += vx2;
-            label5.Top += vx2;
-
-            label6.Left += vx3;
-            label6.Top += vy3;
+            label6.Left += vx[2];
+            label6.Top += vy[2];
 
             //ÇªÇÍÇºÇÍÇÃïùÇ∆çÇÇ≥Ç/2ÇµÇƒÇ¢ÇÈ
             label3.Left = fpos.X - (label3.Width / 2);
@@ -61,77 +52,59 @@ namespace cs0530
 
             if (label1.Left < 0)
             {
-                vx = Math.Abs(vx);
+                vx[0] = Math.Abs(vx[0]);
             }
             else if (label1.Right > ClientSize.Width)
             {
-                vx = -Math.Abs(vx);
+                vx[0] = -Math.Abs(vx[0]);
             }
 
             if (label1.Top < 0)
             {
-                vy = Math.Abs(vy);
+                vy[0] = Math.Abs(vy[0]);
             }
             else if (label1.Bottom > ClientSize.Height)
             {
-                vy = -Math.Abs(vy);
+                vy[0] = -Math.Abs(vy[0]);
             }
 
-            //-------------------------------------------------------
-            if (label2.Left < 0)
-            {
-                xx = Math.Abs(xx);
-            }
-            else if (label2.Right > ClientSize.Width)
-            {
-                xx = -Math.Abs(xx);
-            }
-
-            if (label2.Top < 0)
-            {
-                xy = Math.Abs(xy);
-            }
-            else if (label2.Bottom > ClientSize.Height)
-            {
-                xy = -Math.Abs(xy);
-            }
 
             //---------------------------------------------------------
             if (label5.Left < 0)
             {
-                vx2 = Math.Abs(vx2);
+                vx[1] = Math.Abs(vx[1]);
             }
             else if (label5.Right > ClientSize.Width)
             {
-                vx2 = -Math.Abs(vx2);
+                vx[1] = -Math.Abs(vx[1]);
             }
 
             if (label5.Top < 0)
             {
-                vy2 = Math.Abs(vy2);
+                vy[1] = Math.Abs(vy[1]);
             }
             else if (label5.Bottom > ClientSize.Height)
             {
-                vy2 = -Math.Abs(vy2);
+                vy[1] = -Math.Abs(vy[1]);
             }
 
             //----------------------------------------------------------
             if (label6.Left < 0)
             {
-                vx3 = Math.Abs(vx3);
+                vx[2] = Math.Abs(vx[2]);
             }
             else if (label6.Right > ClientSize.Width)
             {
-                vx3 = -Math.Abs(vx3);
+                vx[2] = -Math.Abs(vx[2]);
             }
 
             if (label6.Top < 0)
             {
-                vy3 = Math.Abs(vy3);
+                vy[2] = Math.Abs(vy[2]);
             }
             else if (label6.Bottom > ClientSize.Height)
             {
-                vy3 = -Math.Abs(vy3);
+                vy[2]= -Math.Abs(vy[2]);
             }
 
             if (label1.Left == label2.Left && label1.Top == label2.Top)
@@ -169,8 +142,12 @@ namespace cs0530
             counter = 0;
             timer1.Enabled = true;
             button1.Visible = false;
-            vx = random.Next(-10, 11);
-            vy = random.Next(-10, 11);
+            vx[0] = random.Next(-10, 11);
+            vy[0] = random.Next(-10, 11);
+            vx[1] = random.Next(-10, 11);
+            vy[1] = random.Next(-10, 11);
+            vx[2] = random.Next(-10, 11);
+            vy[2] = random.Next(-10, 11);
             label1.Top = random.Next(ClientSize.Height - label1.Top);
             label1.Left = random.Next(ClientSize.Width - label1.Width);
         }

@@ -54,6 +54,7 @@
             // timer1
             // 
             timer1.Enabled = true;
+            timer1.Interval = 1;
             timer1.Tick += timer1_Tick;
             // 
             // label2
