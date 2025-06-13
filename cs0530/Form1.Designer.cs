@@ -36,6 +36,8 @@
             label3 = new Label();
             label4 = new Label();
             button1 = new Button();
+            label5 = new Label();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -101,11 +103,33 @@
             button1.Visible = false;
             button1.Click += button1_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Yu Gothic UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            label5.Location = new Point(241, 227);
+            label5.Name = "label5";
+            label5.Size = new Size(105, 45);
+            label5.TabIndex = 6;
+            label5.Text = "label5";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Yu Gothic UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 128);
+            label6.Location = new Point(554, 244);
+            label6.Name = "label6";
+            label6.Size = new Size(105, 45);
+            label6.TabIndex = 7;
+            label6.Text = "label6";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(575, 391);
+            ClientSize = new Size(821, 586);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(button1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -127,5 +151,7 @@
         private Label label3;
         private Label label4;
         private Button button1;
+        private Label label5;
+        private Label label6;
     }
 }
