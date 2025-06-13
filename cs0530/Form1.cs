@@ -5,7 +5,6 @@ namespace cs0530
         int[] vx = new int[3];
         int[] vy = new int[3];
         int counter = 0;
-        int a;
         static Random random = new Random();
 
         public Form1()
@@ -155,9 +154,9 @@ namespace cs0530
 
         private void button2_Click(object sender, EventArgs e)
         {
-            for(int i =0; i<10; i++)
+            for(int i = 0; i < 10; i++)
             {
-                MessageBox.Show($"{i}");
+                //MessageBox.Show($"{i}");
                 button2.Text = $"{i}";
             }
         }
