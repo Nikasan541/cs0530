@@ -2,9 +2,10 @@ namespace cs0530
 {
     public partial class Form1 : Form
     {
-        int [] vx = new int[3];
+        int[] vx = new int[3];
         int[] vy = new int[3];
         int counter = 0;
+        int a;
         static Random random = new Random();
 
         public Form1()
@@ -17,8 +18,8 @@ namespace cs0530
             vx[2] = random.Next(-10, 301);
             vy[2] = random.Next(-10, 301);
 
-            label1.Top = random.Next(ClientSize.Height-label1.Top);
-            label1.Left = random.Next(ClientSize.Width-label1.Width);
+            label1.Top = random.Next(ClientSize.Height - label1.Top);
+            label1.Left = random.Next(ClientSize.Width - label1.Width);
             label5.Top = random.Next(ClientSize.Height - label5.Top);
             label5.Left = random.Next(ClientSize.Width - label5.Width);
             label6.Top = random.Next(ClientSize.Height - label6.Top);
@@ -104,7 +105,7 @@ namespace cs0530
             }
             else if (label6.Bottom > ClientSize.Height)
             {
-                vy[2]= -Math.Abs(vy[2]);
+                vy[2] = -Math.Abs(vy[2]);
             }
 
             if (label1.Left == label2.Left && label1.Top == label2.Top)
@@ -150,6 +151,15 @@ namespace cs0530
             vy[2] = random.Next(-10, 11);
             label1.Top = random.Next(ClientSize.Height - label1.Top);
             label1.Left = random.Next(ClientSize.Width - label1.Width);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for(int i =0; i<10; i++)
+            {
+                MessageBox.Show($"{i}");
+                button2.Text = $"{i}";
+            }
         }
     }
 }
